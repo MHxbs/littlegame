@@ -18,13 +18,16 @@ import java.io.*;
 import java.util.Date;
 
 public class XmlUtil {
-    public static MessageBean paresXml(InputStream is) throws ParserConfigurationException, IOException, SAXException {
+    public static MessageBean paresXmlToMessageBean(InputStream is) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
         DocumentBuilder builder=factory.newDocumentBuilder();
         Document document=builder.parse(is);
         MessageBean messageBean=new MessageBean();
         messageBean.setToUserName(document.getElementsByTagName("ToUserName").item(0).getTextContent());
         messageBean.setFromUserName(document.getElementsByTagName("FromUserName").item(0).getTextContent());
+        messageBean.setCreateTime(document.getElementsByTagName("CreateTime").item(0).getTextContent());
+        messageBean.setMsgType(document.getElementsByTagName("MsgType").item(0).getTextContent());
+        messageBean.setContent(document.getElementsByTagName("Content").item(0).getTextContent());
         return messageBean;
 
     }

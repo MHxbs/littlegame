@@ -18,10 +18,13 @@
         <location>/WEB-INF/error.jsp</location>
     </error-page>
 
-    <!--<welcome-file-list>
+    <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>
-    </welcome-file-list>-->
+    </welcome-file-list>
 
+    <listener>
+        <listener-class>org.redrock.controller.UpdateCountListener</listener-class>
+    </listener>
     <filter>
         <filter-name>getUserInfo</filter-name>
         <filter-class>org.redrock.controller.Filter</filter-class>

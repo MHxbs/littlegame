@@ -1,5 +1,6 @@
 package org.redrock.controller;
 
+import org.redrock.bean.MessageBean;
 import org.redrock.bean.User;
 import org.redrock.util.Access_Token;
 import org.redrock.util.DBCPHelper;
@@ -29,7 +30,7 @@ import java.util.Map;
 // 对用户发送的文本信息进行解析，回复，当发送game时返回游戏的首页
 @WebServlet(value = "/Servlet")
 public class Servlet extends HttpServlet {
-    Map<String,String> map=new HashMap<String, String>();
+   // Map<String,String> map=new HashMap<String, String>();
     String xml=null;
 
     @Override
@@ -41,7 +42,25 @@ public class Servlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        req.setCharacterEncoding("UTF-8");
        resp.setCharacterEncoding("UTF-8");
-        DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
+        try {
+            MessageBean messageBean=XmlUtil.paresXmlToMessageBean(req.getInputStream());
+            if (messageBean.getContent().equals("game")){
+                xml=XmlUtil.createXml(messageBean.getFromUserName(),messageBean.getToUserName(),"http://hong.s1.natapp.cc/views/start.jsp");
+                resp.getWriter().print(xml);
+            }else {
+                xml=XmlUtil.createXml(messageBean.getFromUserName(),messageBean.getToUserName(),"请输入game获得游戏！");
+                resp.getWriter().print(xml);
+            }
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
+
+
+       /*DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
         try {
             // 解析微信发来的文本信息（xml格式）
             DocumentBuilder builder=factory.newDocumentBuilder();
@@ -77,6 +96,6 @@ public class Servlet extends HttpServlet {
             e.printStackTrace();
         } catch (TransformerException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }
