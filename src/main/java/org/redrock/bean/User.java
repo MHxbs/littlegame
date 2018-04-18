@@ -1,5 +1,5 @@
 package org.redrock.bean;
-
+// 用户
 public class User {
     private int subscribe;
     private String openid;

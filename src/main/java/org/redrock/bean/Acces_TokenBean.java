@@ -1,5 +1,5 @@
 package org.redrock.bean;
-
+// 微信的基础access_token
 public class Acces_TokenBean {
     private String access_token;
     private String expires_in;

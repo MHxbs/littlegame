@@ -13,10 +13,11 @@ import java.util.List;
 import java.util.Map;
 
 public class ResultSetUtil {
+
     public static  Map<String,Map<String,Object>> resultSetToData(ResultSet resultSet) throws SQLException {
         int i=0;
         Map<String,Map<String,Object>> data=new HashMap<String, Map<String,Object>>();
-        Gson gson=new Gson();
+
         while (resultSet.next()){
             Map<String,Object> map=new HashMap<String, Object>();
             String nickname=resultSet.getString("nickname");
@@ -34,7 +35,7 @@ public class ResultSetUtil {
     }
 
     public  static Map<String,Object> resultSetToUserPart(ResultSet resultSet) throws SQLException {
-        UserPart user=new UserPart();
+
         Map<String,Object> map=new HashMap<String, Object>();
         if (resultSet.next()){
             String nickname=resultSet.getString("nickname");

@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
+// 微信基础access_token的工具类
 public class Access_Token {
     //wxb947b0e72bccc47b
     //f9912111ed04dd08bb9fa7cc3bd91ee9

@@ -1,5 +1,5 @@
 package org.redrock.bean;
-
+// 在微信网页授权中，得到用户对该公众号的唯一access_token
 public class UserToken {
     private String access_token;
     private int expires_in;

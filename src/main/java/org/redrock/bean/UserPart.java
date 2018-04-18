@@ -1,5 +1,5 @@
 package org.redrock.bean;
-
+// 返回json的用户
 public class UserPart {
     private String nickname;
     private String headimgurl;

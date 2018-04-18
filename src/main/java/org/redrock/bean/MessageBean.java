@@ -1,5 +1,5 @@
 package org.redrock.bean;
-
+// 微信信息xml格式
 public class MessageBean {
     private String ToUserName;
     private String FromUserName;

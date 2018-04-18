@@ -9,7 +9,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
-
+// 这是微信基础获得用户信息的工具类
+// 其余微信的基础access_token
 public class UserInfoUtil {
     private static String access_token=null;
     private static String AppId="wx50cd7859ecffe7de";
