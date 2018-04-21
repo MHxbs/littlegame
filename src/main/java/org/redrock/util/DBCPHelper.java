@@ -113,13 +113,19 @@ public class DBCPHelper {
             System.out.println(openid+": 更改剩余游戏次数成功,次数："+count);
         }
     }
-    public static void updateAllCount() throws SQLException {
+    public static void updateAllCount()  {
         Connection con=DBCPFactory.getConnection();
         String sql="UPDATE users SET count = 40";
-        PreparedStatement pst=con.prepareStatement(sql);
-        int a=pst.executeUpdate();
-        if (a==1){
-            System.out.println("用户的count都被置为40");
+        PreparedStatement pst= null;
+        try {
+            pst = con.prepareStatement(sql);
+            int a=pst.executeUpdate();
+            if (a==1){
+                System.out.println("用户的count都被置为40");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
     }
 }
