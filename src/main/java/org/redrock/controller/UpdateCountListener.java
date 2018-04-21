@@ -1,14 +1,11 @@
 package org.redrock.controller;
 
-import org.redrock.util.DBCPFactory;
+
 import org.redrock.util.DBCPHelper;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import java.util.Timer;
 import java.util.TimerTask;
 

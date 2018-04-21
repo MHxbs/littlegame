@@ -1,6 +1,6 @@
 package org.redrock.controller;
 
-import org.redrock.bean.User;
+
 import org.redrock.util.DBCPHelper;
 
 import javax.servlet.ServletException;

@@ -128,4 +128,12 @@ public class DBCPHelper {
         }
 
     }
+    public static void updateImageUrl(String openid,String headImgUrl) throws SQLException {
+        Connection con=DBCPFactory.getConnection();
+        String sql="UPDATE users SET headimgurl = ? WHERE openid=?";
+        PreparedStatement pst=con.prepareStatement(sql);
+        pst.setString(1,openid);
+        pst.setString(2,headImgUrl);
+        pst.executeQuery();
+    }
 }

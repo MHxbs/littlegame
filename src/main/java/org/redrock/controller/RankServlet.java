@@ -1,10 +1,6 @@
 package org.redrock.controller;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import org.redrock.bean.User;
-import org.redrock.bean.UserPart;
-import org.redrock.util.DBCPHelper;
+
 import org.redrock.util.ResultSetUtil;
 
 import javax.servlet.ServletException;
@@ -14,10 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
+
 
 @WebServlet(value = "/RankServlet")
 public class RankServlet extends HttpServlet {

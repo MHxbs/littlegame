@@ -1,12 +1,9 @@
 package org.redrock.controller;
 
 import org.redrock.bean.MessageBean;
-import org.redrock.bean.User;
-import org.redrock.util.Access_Token;
-import org.redrock.util.DBCPHelper;
-import org.redrock.util.UserInfoUtil;
+
 import org.redrock.util.XmlUtil;
-import org.w3c.dom.Document;
+
 import org.xml.sax.SAXException;
 
 import javax.servlet.ServletException;
@@ -14,17 +11,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+
 
 
 // 对用户发送的文本信息进行解析，回复，当发送game时返回游戏的首页

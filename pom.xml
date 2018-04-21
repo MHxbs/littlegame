@@ -7,9 +7,22 @@
     <groupId>LittleGame</groupId>
     <artifactId>LittleGame</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
-<dependencies>
-    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-servlet-api</artifactId>
+            <version>7.0.62</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
     <dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
